@@ -15,6 +15,9 @@ public class HW17Q5 {
         }
         System.out.println("Percentage of numbers over 50: "+findPercentGreater(a,50));
         selectSort(a);
+        System.out.println("Enter a target number");
+        int target = in.nextInt();
+        System.out.println(binarySearch(a,target));
 
     }
     public static double findPercentGreater(ArrayList<Integer> a, int min) {
@@ -37,5 +40,19 @@ public class HW17Q5 {
             a.set(i,a.get(indexMin));
             a.set(indexMin,temp);
         }
+    }
+    public static int binarySearch(ArrayList<Integer> a, int target) {
+        int left = 0, right = a.size(), middle;
+        while (left >= right) {
+            middle = (left+right)/2;
+            if (target == a.get(middle)) {
+                return middle;
+            } else if (target < a.get(middle)) {
+                right = middle;
+            } else {
+                left = middle;
+            }
+        }
+        return -1;
     }
 }
