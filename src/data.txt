@@ -1,0 +1,10 @@
+Nicholas DiMaggio,gurl,22,2.8
+Adriano,boy,17,4.0
+Zach,boy,27,3.8
+RJ,boy,18,3.9
+Leela,girl,17,3.9
+Gabe,boy,16,3.7
+Lucas,boy,17,3.5
+noJ,boy,12,2.8
+Joe Biden,boy,17,4.0
+Santiago,boy,16,3.8
