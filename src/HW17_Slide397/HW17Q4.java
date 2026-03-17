@@ -13,9 +13,9 @@ public class HW17Q4 {
             if (target == a.get(middle)) {
                 return middle;
             } else if (target < a.get(middle)) {
-                right = middle;
+                right = middle-1;
             } else {
-                left = middle;
+                left = middle+1;
             }
         }
         return -1;
