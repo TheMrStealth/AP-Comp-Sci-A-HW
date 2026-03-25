@@ -23,7 +23,7 @@ public class HW18Q2 {
         hw.readRecords();
         System.out.println("Enter the id of an employee");
         hw.addSalary(in.nextInt());
-        hw.addSalAll();
+        hw.addSalAll2();
 
     }
     public void readRecords() throws FileNotFoundException {
@@ -61,5 +61,33 @@ public class HW18Q2 {
         PrintWriter write = new PrintWriter("C:\\Users\\robert.gillette\\Documents\\empsOutput.txt");
         write.println(records);
         write.close();
+    }
+    public void addSalAll2() throws FileNotFoundException {
+        int old = 0;
+        for (int i = 0; i < records.size(); i++) {
+            for (int j = 0; j < records.get(i).size(); j++) {
+                if (!checkAlpha(records.get(i).get(j)) && Integer.parseInt(records.get(i).get(j)) > 12000) {
+                    old = Integer.parseInt(records.get(i).get(2));
+                    records.get(i).set(2,Integer.toString(Integer.parseInt(records.get(i).get(j))+2000));
+                    System.out.println("Old: "+old);
+                    System.out.println("New: "+(old+2000));
+                    break;
+                }
+            }
+        }
+        PrintWriter write = new PrintWriter("C:\\Users\\robert.gillette\\Documents\\empsOutput.txt");
+        write.println(records);
+        write.close();
+    }
+    public boolean checkAlpha(String s) {
+        boolean contains = false;
+        String[] alpha = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+        for (String a : alpha) {
+            if (s.contains(a)) {
+                contains = true;
+                break;
+            }
+        }
+        return contains;
     }
 }
