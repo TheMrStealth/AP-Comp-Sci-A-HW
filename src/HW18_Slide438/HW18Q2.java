@@ -66,7 +66,7 @@ public class HW18Q2 {
         int old = 0;
         for (int i = 0; i < records.size(); i++) {
             for (int j = 0; j < records.get(i).size(); j++) {
-                if (!checkAlpha(records.get(i).get(j)) && Integer.parseInt(records.get(i).get(j)) > 12000) {
+                if (!checkAlpha(records.get(i).get(j)) && Integer.parseInt(records.get(i).get(j)) > 1200) {
                     old = Integer.parseInt(records.get(i).get(2));
                     records.get(i).set(2,Integer.toString(Integer.parseInt(records.get(i).get(j))+2000));
                     System.out.println("Old: "+old);
