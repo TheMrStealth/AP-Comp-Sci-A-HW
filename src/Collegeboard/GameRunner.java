@@ -14,5 +14,7 @@ public class GameRunner {
         game.displayBoard();
         game.moveRight();
         game.displayBoard();
+        game.mergeRight();
+        game.displayBoard();
     }
 }
