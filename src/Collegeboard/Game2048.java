@@ -3,6 +3,7 @@ package Collegeboard;
 import java.io.File;
 import java.io.IOError;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -146,12 +147,14 @@ public class Game2048 {
     }
 
     public void checkHighScore() throws IOException {
-        int[] highScores = new int[10];
         File hsFile = new File("C:\\Users\\robert.gillette\\IdeaProjects\\AP-Comp-Sci-A-HW\\src\\Collegeboard\\highscore.txt");
         Scanner fileReader = new Scanner(hsFile);
-        int i = 0;
-        while (fileReader.hasNextInt() && i < 10) {
-
+        PrintWriter fileWriter = new PrintWriter(hsFile);
+        int highScore;
+        highScore = fileReader.hasNextInt() ? fileReader.nextInt() : 0;
+        if (score > highScore) {
+            highScore = score;
+            fileWriter.println(highScore);
         }
     }
 
